@@ -16,7 +16,7 @@ require('./mongo');
 
 require('./routes/auth')(app,Users,rndstring);
 require('./routes/notice')(app, Message,rndstring);
-let port = 3000;
+let port = 6101;
 
 app.listen(port, ()=>{
   console.log('Server Porting On ' + port);
