@@ -37,7 +37,7 @@ function notice(app, Message, rndstring){
     // length - (page - 1 ) * 10 부터 length - page * 10 까지 findOne으로 10개씩 찾아서 list에 push
     app.post('/message/read', async(req,res)=>{
         let result = await Message.find().sort({ docNum : -1 });
-        let list = [];
+        let list = []
         for (var i=0; result[i] != null; i++) {
             let json = {
                 phone : result[i].phone,
@@ -61,7 +61,7 @@ function notice(app, Message, rndstring){
             }
             list.push(json)
         }
-        return res.status(200).json({list : list})
+        return res.status(200).json(list)
     })
     app.post('/message/searchPhone', async(req,res)=>{
         let result = await Message.find({userToken : req.body.userToken, phone:req.body.phone}).sort({docNum : -1})
@@ -74,7 +74,7 @@ function notice(app, Message, rndstring){
             }
             list.push(json)
         }
-        return res.status(200).json({list : list})
+        return res.status(200).json( list )
     })
 
 }

@@ -19,7 +19,7 @@ function auth(app, Users, rndstring){
   .post('/signin', async(req,res)=>{
     var result = await Users.findOne(req.body);
     if(!result) return res.status(404).json({message : "User not found!"})
-    else return res.status(200).json({token : result.token})
+    else return res.status(200).json({token : result.token, name : result.name})
   })
 
   .get('/auto/:token', async(req,res)=>{

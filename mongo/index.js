@@ -10,6 +10,7 @@ db.once('open', function callback () { console.log("Mongo On"); });
 
 var UsersSchema = mongoose.Schema({
   id : {type : String},
+  name: {type: String},
   passwd : {type : String},
   token : {type: String}
 });
