@@ -31,10 +31,14 @@ function notice(app, Message, rndstring){
         messages.token =  rndstring.generate(23);
         messages.nowDate = today;
         if(req.body.phone == null || req.body.phone == 0 || req.body.phone == ""|| req.body.phone == "null"){
-            messages.phone = "애플리케이션이 강제종료된 의심이 있습니다. 주의해주세요"
-        }
-        if(req.body.data == null || req.body.data == ""){
-            messages.data = "애플리케이션이 강제종료된 흔적이 있습니다. 주의해주세요"
+            var result = await Message.remove({docNum : req.body.docNum})
+            var list = await Message.find()
+            for ( var i = parseInt(req.body.docNum)+1; i <= list.length+1;i++) {
+                let upateResult = await Message.update({ docNum : i }, {
+                    $set : { docNum : i - 1}
+                })
+            }
+            return res.status(200).json({message : "null 에러 막기 성공!"})    
         }
         var result = await messages.save();    
         if(!result.ok) res.status(200).json(messages);
