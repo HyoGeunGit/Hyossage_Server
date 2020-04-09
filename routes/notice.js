@@ -30,6 +30,12 @@ function notice(app, Message, rndstring){
         messages.docNum = listNum + 1;
         messages.token =  rndstring.generate(23);
         messages.nowDate = today;
+        if(req.body.phone == null || req.body.phone == 0 || req.body.phone == ""){
+            messages.phone = "애플리케이션이 강제종료된 흔적이 있습니다. 주의해주세요"
+        }
+        if(req.body.data == null || req.body.data == ""){
+            messages.data = "애플리케이션이 강제종료된 흔적이 있습니다. 주의해주세요"
+        }
         var result = await messages.save();    
         if(!result.ok) res.status(200).json(messages);
         else res.status(500).json({message : "fail!"});
