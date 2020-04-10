@@ -67,6 +67,7 @@ function notice(app, Message, rndstring){
             let json = {
                 phone : result[i].phone,
                 data : result[i].data,
+                nowDate : result[i].nowDate,
                 token : result[i].token
             }
             list.push(json)
@@ -80,6 +81,7 @@ function notice(app, Message, rndstring){
             let json = {
                 phone : result[i].phone,
                 data : result[i].data,
+                nowDate : result[i].nowDate,
                 token : result[i].token
             }
             list.push(json)
