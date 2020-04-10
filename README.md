@@ -102,7 +102,7 @@
 
      userToken :   {type: String, require: true} // 유저토큰
     
-> Response (ex. 01011112222라는 전화번호를 넣고 NFCtRfG89ei7VYMyM4hsAYp라는 유저토큰을 넣었을때)
+> Response (ex.01011112222라는 전화번호를 넣고 NFCtRfG89ei7VYMyM4hsAYp라는 유저토큰을 넣었을때)
 
     HTTP 200 : { message : "success!"}
     {
