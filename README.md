@@ -87,6 +87,7 @@
     HTTP 200 : { message : "success!"}
     {
             "phone": "01011112222",
+            "nowDate": "시가아안",
             "data": "안녕하세요 문자 반환 테스트 입니다.",
             "token": "fLSWsAWjY6VCx5kEZBAAqt1"
     }
@@ -108,6 +109,7 @@
     {
             "phone": "01011112222",
             "data": "안녕하세요 문자 검색 테스트 입니다.",
+            "nowDate": "시가아안",
             "token": "fLSWsAWjY6VCx5kEZBAAqt1"
     }
 
